@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "nestor"
+version = "0.1.0"
+description = "nestor: CLI to interact with GPT"
+authors = ["pstfni"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.10, <3.12"
+openai = "^0.28"
+rich = "^13.0"
+prompt-toolkit = "^3.0"
+textual = "^0.40"
+
+[tool.poetry.dev-dependencies]
+black= "^23.9.1"
+pre-commit= "^3.4.0"
+ruff= "^0.0.289"
+
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5"
+mkdocstrings = "^0.23"
+mkdocstrings-python = "^1.7.3"
+mkdocs-material = "^9.4"
+
+
+[tool.ruff]
+line-length = 120
+extend-select = ["Q", "RUF100", "UP", "I"]
+
+[tool.black]
+color = true
+line-length = 120
+skip-string-normalization = true
+
+[build-system]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
